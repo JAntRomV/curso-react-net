@@ -1,26 +1,10 @@
-import { useEffect, useState } from 'react'
 import './App.css'
 
-function App() {
-  // const [count, setCount] = useState(0)
-
-  const [horaActual, setHoraActual] = useState(new Date());
-
-  useEffect(() => {
-    const timerId = setInterval(() => {
-      setHoraActual(new Date());
-    }, 1000);
-
-    return () => clearInterval(timerId);
-  }, []);
-
-  return (
+export default function App() {  
+  return(
     <div>
-      <h3>Ejemplo React</h3>
-      <input />
-      <div>{horaActual.toString()}</div>
+        <h1>Hola mundo</h1>
+        <h3>Bienvenido a mi primer proyecto de React</h3>
     </div>
-  )
+  );   
 }
-
-export default App
