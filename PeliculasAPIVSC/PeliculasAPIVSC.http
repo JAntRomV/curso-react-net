@@ -1,0 +1,6 @@
+@PeliculasAPIVSC_HostAddress = http://localhost:5017
+
+GET {{PeliculasAPIVSC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
