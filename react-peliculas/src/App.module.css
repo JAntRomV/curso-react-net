@@ -1,0 +1,6 @@
+/* Configuración de estilos CSS de manera individual para cada componente de React. 
+Esto permite que los estilos sean locales al componente y no afecten a otros componentes. */
+
+.color{
+    color:blue;
+}
