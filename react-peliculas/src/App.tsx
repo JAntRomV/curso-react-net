@@ -1,7 +1,10 @@
 import styles from './App.module.css'
+import { useState } from 'react';
 
 export default function App() { 
   
+  console.log('Carga App');
+
   const subtitulo = "Este es otro subtitulo";
   const duplicar = (valor: number) => valor * 2;
   const imagenURL = '/vite.svg';
@@ -11,6 +14,27 @@ export default function App() {
     height: '100px',
     backgroundColor: 'red',
     marginLeft: '1rem',
+  };
+
+  const manejarClick = () => {
+    alert('¡Hola! Has hecho clic en el botón.');
+  }
+
+  // const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  //   console.log((e.target as HTMLInputElement).value);
+  // }
+
+  //Se utiliza useState para manejar el estado del texto ingresado en el input. 
+  // Esto permite que React vuelva a renderizar el componente cada vez que el valor del input cambie, 
+  // mostrando el texto actualizado en la interfaz de usuario.
+  const [texto, setTexto] = useState('');
+
+  let texto2 = '';
+  console.log('texto2', texto2);
+
+  const manejarKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    texto2 = e.currentTarget.value;
+    setTexto(e.currentTarget.value)
   };
 
   return(
@@ -24,6 +48,15 @@ export default function App() {
       <h4>El doble de 5 es: {duplicar(5)}</h4>
       <img src={imagenURL} alt="Logo de Vite" />
       <div style={cuadradoRojo}></div>
+
+      <button onClick={manejarClick}>Click me</button>
+      <div>
+        <input onKeyUp={(e) => manejarKeyUp(e)} type="text" placeholder="Escribe algo..." />
+      </div>
+      <div>
+        <p>Has escrito: {texto}</p>
+      </div>
+
     </>
   );   
 }
