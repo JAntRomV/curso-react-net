@@ -1,10 +1,15 @@
-import Tabla from "./Tabla";
+import { useState } from "react";
+import EjemploUseEffect from "./EjemploUseEffect";
 
 export default function App(){
+  const [mostrar, setMostrar] = useState(true);
+
   return (
-    <div className="container">
-      <h1>Tabla de Personas</h1>
-      <Tabla />
-    </div>
+    <>
+      <input type="checkbox" checked={mostrar} onChange={(e) => setMostrar(e.target.checked)} />
+      Mostrar Componente
+      
+      {mostrar ? <EjemploUseEffect /> : null} 
+    </>
   );
 }
