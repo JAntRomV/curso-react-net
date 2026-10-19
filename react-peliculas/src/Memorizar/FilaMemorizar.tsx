@@ -1,6 +1,10 @@
+import { memo } from "react";
 import type Persona from "../persona.model";
 
-export default function FilaMemorizar({persona,removerPersona}: FilaProps) {
+const FilaMemorizar = memo(function FilaMemorizar({persona,removerPersona}: FilaProps) {
+  
+  console.log(`Renderizando Fila ${persona.nombre}`);
+  
   return (
     <tr>
       <td>{persona.id}</td>
@@ -10,10 +14,12 @@ export default function FilaMemorizar({persona,removerPersona}: FilaProps) {
         <button onClick={() => removerPersona(persona)}>Eliminar</button>
       </td>
     </tr>
-  );
-}
+  )
+});
 
 interface FilaProps {
   persona: Persona;
   removerPersona: (persona: Persona) => void;
 }
+
+export default FilaMemorizar;

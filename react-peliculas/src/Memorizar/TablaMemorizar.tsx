@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import type Persona from "../persona.model";
 import FilaMemorizar from "./FilaMemorizar";
 
@@ -14,9 +14,9 @@ const TablaMemoizar = memo(function TablaMemorizar(){
 
     const [personas, setPersonas] = useState(personasFuente);
 
-    const removerPersona = (persona: Persona) => {
-        setPersonas(personas.filter(p => p.id !== persona.id));
-    }
+    const removerPersona = useCallback((persona: Persona) => {
+        setPersonas(estadoActual => estadoActual.filter(p => p.id !== persona.id));
+    }, []);
 
     return (
         <table className="table table-striped">
