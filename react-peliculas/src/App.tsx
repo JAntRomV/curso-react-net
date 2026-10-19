@@ -1,15 +1,10 @@
-import { useState } from "react";
-import EjemploUseEffect from "./EjemploUseEffect";
+import EjemploMemoizar from "./EjemploMemoizar";
 
 export default function App(){
-  const [mostrar, setMostrar] = useState(true);
 
   return (
     <>
-      <input type="checkbox" checked={mostrar} onChange={(e) => setMostrar(e.target.checked)} />
-      Mostrar Componente
-      
-      {mostrar ? <EjemploUseEffect /> : null} 
+      <EjemploMemoizar />
     </>
   );
 }
