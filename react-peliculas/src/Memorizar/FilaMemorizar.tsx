@@ -5,6 +5,10 @@ const FilaMemorizar = memo(function FilaMemorizar({persona,removerPersona}: Fila
   
   console.log(`Renderizando Fila ${persona.nombre}`);
   
+  if(persona.nombre === "Ana"){
+    throw new Error("Error en la fila de Ana");
+  }
+
   return (
     <tr>
       <td>{persona.id}</td>

@@ -1,6 +1,7 @@
 import { memo, useCallback, useState } from "react";
 import type Persona from "../persona.model";
 import FilaMemorizar from "./FilaMemorizar";
+import { ErrorBoundary } from "react-error-boundary";
 
 const TablaMemoizar = memo(function TablaMemorizar(){
 
@@ -29,7 +30,16 @@ const TablaMemoizar = memo(function TablaMemorizar(){
                 </tr>
             </thead>
             <tbody>
-                {personas.map(persona => <FilaMemorizar key={persona.id} persona={persona} removerPersona={removerPersona} />)}
+                {personas.map(persona => 
+                <ErrorBoundary key={persona.id} fallback={<>
+                    <tr>
+                        <td colSpan={3} style={{color: "red"}}>Error al renderizar la fila de {persona.nombre}</td>
+                    </tr>
+                </>
+                }>
+                    <FilaMemorizar key={persona.id} persona={persona} removerPersona={removerPersona} />
+                </ErrorBoundary>
+                )}
             </tbody>
         </table>
     );
