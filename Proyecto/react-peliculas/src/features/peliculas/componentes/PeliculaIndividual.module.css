@@ -1,0 +1,21 @@
+.div{
+    margin-right: 2%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.div p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.div img {
+    width: 255px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.div a {
+    text-decoration: none;
+    color: black;
+}

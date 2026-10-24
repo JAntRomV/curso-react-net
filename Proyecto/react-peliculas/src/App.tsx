@@ -1,33 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import PeliculaIndividual from "./features/peliculas/componentes/PeliculaIndividual"
+import type Pelicula from "./features/peliculas/modelos/pelicula.model"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const pelicula:Pelicula = {
+    id: 1,
+    titulo: "Matrix",
+    poster: "https://m.media-amazon.com/images/I/51oBxmV-dML._AC_.jpg"
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <PeliculaIndividual pelicula={pelicula} /> 
     </>
   )
 }
