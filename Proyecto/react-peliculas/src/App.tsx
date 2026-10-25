@@ -41,6 +41,8 @@ function App() {
           poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ieHZkOisli5MU47HYFe6UvuRm1rrLI6zksdz1RrA3KJ0gUWTiYWv5hNo&s=10"
       }]
 
+      // const proximosEstrenos : Pelicula[] = []
+
       setPeliculas({enCines, proximosEstrenos}) 
 
     },1000);
