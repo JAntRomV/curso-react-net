@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ListadoPeliculas from "./features/peliculas/componentes/ListadoPeliculas"
 import type Pelicula from "./features/peliculas/modelos/pelicula.model"
+import Boton from "./componentes/Boton";
 
 function App() {
 
@@ -52,11 +53,14 @@ function App() {
 
   return (
     <>
-      <h3>En Cines</h3>
-      <ListadoPeliculas peliculas={peliculas.enCines} />
+      <div className="container">
+        <Boton>Botón de ejemplo</Boton>
+        <h3>En Cines</h3>
+        <ListadoPeliculas peliculas={peliculas.enCines} />
 
-      <h3>Próximos Estrenos</h3>
-      <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+        <h3>Próximos Estrenos</h3>
+        <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+      </div>
     </>
   )
 }
